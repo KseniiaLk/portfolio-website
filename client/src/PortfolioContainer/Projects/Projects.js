@@ -11,7 +11,7 @@ import "./Projects.css";
 import Dashboard from "../img/Projects/Dashboard.png";
 import EWallet from "../img/Projects/EWallet.png";
 import IngeBra from "../img/Projects/IngeBra.png";
-import Sinus from "../img/Projects/Sinus.png";
+import WealthSpecialists from "../img/Projects/WealthSpecialists.png";
 import BattlePass from "../img/Projects/BattlePass.png";
 import Nilo from "../img/Projects/Nilo.png";
 import shape from "../img/Projects/shape-bg.png";
@@ -92,8 +92,8 @@ export default function Projects(props) {
                 </div>
               <div className="col-lg-12">
                   <div className="project-info">
-                    <img src={Sinus} alt=""></img>
-                    <h5>Sinus</h5>
+                    <img src={WealthSpecialists} alt=""></img>
+                    <h5>WealthSpecialists</h5>
                   </div>
               </div>
             </OwlCarousel>
@@ -137,11 +137,10 @@ export default function Projects(props) {
               liveLink="https://e-wallet-try.netlify.app/"
             />
             <ProjectItem
-              imageSrc={Sinus}
-              title="Sinus"
-              description="SINUS Webshop is an online store that sells skateboards and accessories (Figma design)."
-              githubLink="https://www.figma.com/file/JwcsZtG4RAPKFNFOF9s12V/slut-projekt?node-id=2%3A2&mode=dev"
-              liveLink="https://www.figma.com/proto/JwcsZtG4RAPKFNFOF9s12V/slut-projekt?type=design&node-id=206-6229&t=CoDSENKkV7SfXK0b-1&scaling=contain&page-id=2%3A2&starting-point-node-id=206%3A6197&show-proto-sidebar=1&mode=design"
+              imageSrc={WealthSpecialists}
+              title="WealthSpecialists"
+              description="We developed a C# backend banking system with user authentication, account and transaction management (including currency exchange, savings, and loans), admin-controlled user creation, security features like login lockout, and a user-friendly interface with delayed transaction processing for better control."
+              githubLink="https://github.com/KseniiaLk/WealthSpecialists"
              />
       </div>
     </div>

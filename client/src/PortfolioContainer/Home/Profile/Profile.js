@@ -29,7 +29,7 @@ export default function Profile() {
           <div className="profile-details-role">
             <span className="primary-text">
               <h3 className="profile-role-tagline">
-                I am a curious and enthusiastic junior JavaScript developer from
+                I am a curious and enthusiastic junior Fullstack developer from
                 Stockholm.
               </h3>
             </span>

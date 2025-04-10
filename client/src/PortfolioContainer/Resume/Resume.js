@@ -54,8 +54,7 @@ const Resume = (props) => {
     { skill: "Node JS", ratingPercentage: 70 },
     { skill: "Mongo Db", ratingPercentage: 50 },
     { skill: "TypeScript", ratingPercentage: 50 },
-    { skill: "HTML", ratingPercentage: 80 },
-    { skill: "CSS", ratingPercentage: 80 },
+    { skill: "C#", ratingPercentage: 80 },
     { skill: "Tailwind CSS", ratingPercentage: 70 },
     { skill: "Bootstrap", ratingPercentage: 80 },
     { skill: "SASS", ratingPercentage: 65 },
@@ -79,19 +78,18 @@ const Resume = (props) => {
       subHeading:
         "Technologies Used: Figma, React JS.",
     },
-    {
-      title: "Dashboard ",
-      duration: { fromDate: "May 2022", toDate: "June 2022" },
-      description:
-        "A dashboard is a control panel that consists of a grid of various components, which can either display information or be interacted with.",
-      subHeading:
-        "Technologies Used: React JS, TypeScript.",
-    },
+
   ];
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
       <ResumeHeading
+        heading={"ChasAcademy"}
+        subHeading={".Net Developer"}
+        fromDate={"2024"}
+        toDate={"2026"}
+      />
+       <ResumeHeading
         heading={"IT-Högskolan"}
         subHeading={"JavaScript Developer"}
         fromDate={"2021"}
@@ -99,7 +97,7 @@ const Resume = (props) => {
       />
 
       <ResumeHeading
-        heading={"St. Petersburg State University of Telecommunications named after prof. M.A. Bonch-Bruevich"}
+        heading={"St. Petersburg State University of Telecommunications"}
         subHeading={"Bachelor's degree, International Relations and AffairsBachelor's degree, International Relations and Affairs"}
         fromDate={"2013"}
         toDate={"2017"}
@@ -134,7 +132,6 @@ const Resume = (props) => {
         <div className="experience-description">
           <span className="resume-description-text">
           I have had the privilege of working on the design (in Figma) and development of the frontend part with React components for Nilo, a cutting-edge digital management consultant and facilitation tool.
-           Nilo is meticulously crafted to empower individuals and teams in making informed decisions swiftly, ensuring that the right choices are made with efficiency and accuracy. 
           </span>
           <br />
         </div>
@@ -180,8 +177,8 @@ const Resume = (props) => {
         description="Dance is not just a hobby but a true passion of mine, and I find immense joy and fulfillment in expressing myself through movement. Among the diverse dance styles that I love, jazz funk, contemporary, and hip-hop hold a special place in my heart."
       />
       <ResumeHeading
-        heading="Music"
-        description="I have a deep passion for music and find joy in listening to various genres and styles."
+        heading="Photography"
+        description="I have a passion for capturing moments through a lens—photography is more than a hobby for me; every now and then, I even take on gigs and step into the role of a photographer."
       />
     </div>,
   ];
