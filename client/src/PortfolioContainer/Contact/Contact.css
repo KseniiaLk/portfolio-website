@@ -1,0 +1,253 @@
+/* Contact Container */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-main {
+  padding: 56px 0;
+  width: 100%;
+}
+
+.contact-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+  .contact-wrapper {
+    padding: 0 32px;
+  }
+}
+
+.contact-header {
+  max-width: 512px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.contact-subtitle {
+  color: #ff5823;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 12px 0;
+  font-family: "Poppins SemiBold";
+}
+
+.contact-title {
+  color: #000000;
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  font-family: "Poppins SemiBold";
+}
+
+@media (min-width: 640px) {
+  .contact-title {
+    font-size: 2.25rem;
+  }
+}
+
+.contact-description {
+  color: #000000;
+  margin: 0;
+  font-family: "Poppins Light";
+}
+
+.contact-form-container {
+  margin-top: 48px;
+  max-width: 512px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Animated Grid Background */
+.contact-form-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+.form-row > * {
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-weight: normal;
+  color: #000000;
+  font-family: "Poppins Light";
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 12px;
+  color: #000000;
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-family: "Poppins Light";
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #ff5823;
+  box-shadow: 0 0 0 3px rgba(255, 88, 35, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form-textarea {
+  resize: none;
+  height: 144px;
+}
+
+.phone-input-wrapper {
+  position: relative;
+  margin-top: 8px;
+}
+
+.country-select {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  bottom: 0;
+  margin: auto 0;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding-right: 8px;
+}
+
+.country-select-input {
+  font-size: 0.875rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #000000;
+  font-family: "Poppins Light";
+  cursor: pointer;
+}
+
+.phone-input {
+  width: 100%;
+  padding-left: 4.5rem;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  appearance: none;
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: #000000;
+  font-family: "Poppins Light";
+  transition: all 0.3s ease;
+}
+
+.phone-input:focus {
+  border-color: #ff5823;
+  box-shadow: 0 0 0 3px rgba(255, 88, 35, 0.1);
+}
+
+.phone-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Submit Button Styling */
+.contact-submit-button {
+  width: 100%;
+  background: linear-gradient(135deg, #ff5823, #ff7a4d);
+  border: 2px solid #ff5823;
+}
+
+.contact-submit-button .interactive-button-glow {
+  background: radial-gradient(circle at 50% 50%, #ff5823 0%, transparent 100%),
+              radial-gradient(circle at 50% 50%, #ff7a4d 0%, transparent 100%);
+}
+
+.contact-submit-button:hover .interactive-button-glow {
+  background: radial-gradient(circle at 50% 50%, #ff7a4d 0%, transparent 100%),
+              radial-gradient(circle at 50% 50%, #ff5823 0%, transparent 100%);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .contact-container {
+    margin: 30px 0 0 0;
+  }
+  
+  .contact-wrapper {
+    padding: 0 16px;
+  }
+  
+  .contact-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .contact-wrapper {
+    padding: 0 10px;
+  }
+  
+  .contact-title {
+    font-size: 1.375rem;
+  }
+  
+  .contact-submit-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}

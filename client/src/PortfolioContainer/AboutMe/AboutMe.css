@@ -1,0 +1,157 @@
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-me-parent {
+    max-width: 1000px;
+    width: 70%;
+    position: relative;
+    z-index: 10;
+  }
+  .about-me-card {
+    display: flex;
+    width: 100%;
+  }
+  .about-me-profile {
+    width: 50%;
+    background-image: url("../../assets/AboutMe/logo.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .about-me-details {
+    width: 48%;
+    text-align: justify;
+    padding: 30px;
+  }
+  .about-me-description {
+    font-size: 12px;
+    margin-left: 20px;
+  }
+  .about-me-highlights {
+    margin: 80px 0;
+    margin-left: 20px;
+  }
+  .highlght-heading {
+    font-family: "Poppins Bold";
+    font-size: 18px;
+    margin: 0 0 5px 0;
+  }
+  .highlight {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    font-family: "Poppins Bold";
+    font-size: 12px;
+
+  }
+  .highlight-blob {
+    height: 12px;
+    width: 12px;
+    margin: 0 10px 0 0;
+    background-color: #333333;
+    border-radius: 50%;
+  }
+  .about-me-options .highlighted-btn {
+    margin: 0 0 0 30px;
+  }
+
+  /* About Me CV Button Styling */
+  .about-me-cv-button {
+    background: linear-gradient(135deg, #ff5823, #ff7a4d);
+    border: 2px solid #ff5823;
+    margin: 0 0 0 30px;
+  }
+
+  .about-me-cv-button .interactive-button-glow {
+    background: radial-gradient(circle at 50% 50%, #ff5823 0%, transparent 100%),
+                radial-gradient(circle at 50% 50%, #ff7a4d 0%, transparent 100%);
+  }
+
+  .about-me-cv-button:hover .interactive-button-glow {
+    background: radial-gradient(circle at 50% 50%, #ff7a4d 0%, transparent 100%),
+                radial-gradient(circle at 50% 50%, #ff5823 0%, transparent 100%);
+  }
+
+  /* Tablet styles */
+  @media only screen and (max-width: 1110px) {
+    .about-me-parent {
+      width: 88%;
+    }
+    .about-me-details {
+      padding: 25px;
+    }
+  }
+  
+  /* Mobile styles */
+  @media only screen and (max-width: 898px) {
+    .about-me-profile {
+      display: none;
+    }
+    .about-me-details {
+      width: 100%;
+      padding: 20px;
+    }
+    .about-me-description {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .about-me-highlights {
+      margin: 60px 0;
+    }
+    .highlight {
+      font-size: 14px;
+    }
+  }
+  
+  /* Small mobile styles */
+  @media only screen and (max-width: 600px) {
+    .about-me-parent {
+      width: 95%;
+    }
+    .about-me-details {
+      padding: 15px;
+    }
+    .about-me-description {
+      font-size: 13px;
+    }
+    .about-me-highlights {
+      margin: 40px 0;
+    }
+    .highlight-heading {
+      font-size: 16px;
+    }
+    .highlight {
+      font-size: 13px;
+    }
+  }
+  
+  /* Extra small mobile styles */
+  @media only screen and (max-width: 466px) {
+    .about-me-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .about-me-options .highlighted-btn {
+      margin: 20px 0 0 0 !important;
+      width: 100%;
+      max-width: 250px;
+    }
+    .about-me-options button {
+      width: 100%;
+      color: #333333;
+    }
+    .about-me-description {
+      font-size: 12px;
+      text-align: left;
+    }
+    .highlight {
+      font-size: 12px;
+    }
+  }
