@@ -1,0 +1,173 @@
+.project-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .project-inner {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-inner:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .project-image {
+    width: 60%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .project-title {
+    font-size: 16px;
+    font-family: "Poppins SemiBold";
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  
+  .project-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+  }
+  
+  .github-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(118, 112, 112);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-family: "Poppins SemiBold";
+    cursor: pointer;
+  }
+  
+  .github-link:hover {
+    background-color: #d8e0e8;
+  }
+  
+  .project-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+/* Project Interactive Button Styling */
+.project-interactive-button {
+  margin: 5px;
+  min-width: 120px;
+  flex: 1;
+  max-width: 200px;
+}
+
+.project-interactive-button .interactive-button-glow {
+  background: radial-gradient(circle at 50% 50%, #ff5823 0%, transparent 100%),
+              radial-gradient(circle at 50% 50%, #ff7a4d 0%, transparent 100%);
+}
+
+.project-interactive-button:hover .interactive-button-glow {
+  background: radial-gradient(circle at 50% 50%, #ff7a4d 0%, transparent 100%),
+              radial-gradient(circle at 50% 50%, #ff5823 0%, transparent 100%);
+}
+
+/* Legacy project-link styles for fallback */
+.project-link {
+  color: white;
+  text-decoration: none;
+  border: 2px solid #ff5823;
+  background: linear-gradient(135deg, #ff5823, #ff7a4d);
+  border-radius: 25px;
+  font-family: "Poppins SemiBold";
+  cursor: pointer;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 88, 35, 0.3);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-link:hover {
+  background: linear-gradient(135deg, #ff7a4d, #ff5823);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 88, 35, 0.4);
+  border-color: #ff7a4d;
+}
+
+  /* Mobile responsive styles for project items */
+  @media only screen and (max-width: 768px) {
+    .project-item {
+      padding: 15px;
+    }
+    
+    .project-content {
+      padding: 15px;
+    }
+    
+    .project-image {
+      width: 70%;
+    }
+    
+    .project-title {
+      font-size: 15px;
+    }
+    
+    .project-description {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    .project-links {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .project-link {
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .project-item {
+      padding: 10px;
+    }
+    
+    .project-content {
+      padding: 10px;
+    }
+    
+    .project-image {
+      width: 80%;
+    }
+    
+    .project-title {
+      font-size: 14px;
+    }
+    
+    .project-description {
+      font-size: 12px;
+    }
+    
+    .project-link {
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+  }
