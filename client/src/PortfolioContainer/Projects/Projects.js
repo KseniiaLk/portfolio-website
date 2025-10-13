@@ -110,13 +110,13 @@ export default function Projects(props) {
             <ProjectItem
               imageSrc={BattlePass}
               title="BattlePass"
-              description="The Battle Pass page for the Stryda website, which will be unveiled to the public soon. React,TypeScript,Tailwind CSS."
+              description="The Battle Pass page for the Stryda website, built with React, TypeScript, and Tailwind CSS."
               liveLink="https://play.stryda.gg/home"
             />
              <ProjectItem
               imageSrc={Nilo}
               title="Nilo"
-              description="At Nilo Collab, I have been engaged in ongoing JavaScript (React) development. "
+              description="At Nilo Collab, I work on continuous JavaScript (React) development and contribute to the visual side as well — designing and creating components and styles in Figma."
               liveLink="https://www.nilocollab.com/"
             />
             <ProjectItem

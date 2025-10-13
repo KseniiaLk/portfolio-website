@@ -46,51 +46,23 @@ const Resume = (props) => {
     { label: "Education" },
     { label: "Work" },
     { label: "Programming Skills" },
-    { label: "Projects" },
     { label: "Interests" },
   ];
   const programmingSkillsDetails = [
     { skill: "JavaScript", ratingPercentage: 90 },
-    { skill: "React JS", ratingPercentage: 80 },
-    { skill: "Vue", ratingPercentage: 80 },
-    { skill: "Express JS", ratingPercentage: 70 },
-    { skill: "Node JS", ratingPercentage: 70 },
-    { skill: "Mongo Db", ratingPercentage: 50 },
-    { skill: "TypeScript", ratingPercentage: 50 },
+    { skill: "React", ratingPercentage: 85 },
+    { skill: "TypeScript", ratingPercentage: 80 },
+    { skill: "Vue.js", ratingPercentage: 80 },
     { skill: "C#", ratingPercentage: 80 },
-    { skill: "Tailwind CSS", ratingPercentage: 70 },
+    { skill: "Node.js", ratingPercentage: 75 },
+    { skill: "Express.js", ratingPercentage: 70 },
+    { skill: "Tailwind CSS", ratingPercentage: 85 },
     { skill: "Bootstrap", ratingPercentage: 80 },
-    { skill: "SASS", ratingPercentage: 65 },
-    { skill: "SQLITE", ratingPercentage: 80 },
-    
+    { skill: "SASS/SCSS", ratingPercentage: 70 },
+    { skill: "MongoDB", ratingPercentage: 60 },
+    { skill: "SQLite", ratingPercentage: 80 },
   ];
 
-  const projectsDetails = [
-    {
-      title: "The Battle Pass page ",
-      duration: { fromDate: "May 2023", toDate: "June 2023" },
-      description:
-        "During my time at Stryda and my thesis work on the BattlePass page, I have deepened my knowledge in React and TypeScript, learning to use these tools to build advanced web applications.Tailwind CSS has been an indispensable part of my work. With the help of this framework, I have been able to create sleek and responsive user interfaces with ease.",
-      subHeading: "Technologies Used: React JS, Typescript, Tailwind CSS.",
-    },
-    {
-      title: "Nilo Collab ",
-      duration: { fromDate: "August 2022", toDate: "October 2022" },
-      description:
-        "At Nilo Collab, I have been engaged in ongoing JavaScript (React) development. This work has been quite extensive, with a significant portion dedicated to designing in Figma and implementing the design by writing code in Visual Studio Code. Additionally, my tasks have involved making code changes to various components, applying style modifications, and implementing new features.",
-      subHeading:
-        "Technologies Used: Figma, React JS.",
-    },
-    {
-      title: "RestAPICV ",
-      duration: { fromDate: "2023", toDate: "2023" },
-      description:
-        "Built a comprehensive backend REST API using ASP.NET Core to manage CV data. The system features SQL Server database integration through Entity Framework, implementing full CRUD operations for retrieving, adding, updating, and removing information. This project demonstrates my backend development skills and database management expertise.",
-      subHeading:
-        "Technologies Used: ASP.NET Core, C#, SQL Server, Entity Framework, REST API.",
-    },
-
-  ];
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
@@ -109,7 +81,7 @@ const Resume = (props) => {
 
       <ResumeHeading
         heading={"St. Petersburg State University of Telecommunications"}
-        subHeading={"Bachelor's degree, International Relations and AffairsBachelor's degree, International Relations and Affairs"}
+        subHeading={"Bachelor's Degree in International Relations and Affairs"}
         fromDate={"2013"}
         toDate={"2017"}
       />
@@ -119,15 +91,16 @@ const Resume = (props) => {
       <div className="experience-container">
         <ResumeHeading
           heading={"Stryda"}
-          subHeading={"FRONTEND DEVELOPER INTERN"}
-          fromDate={"2023-01-10"}
-          toDate={"Present"}
+          subHeading={"FRONTEND DEVELOPER"}
+          fromDate={"2023-01-01"}
+          toDate={"2023-07-31"}
         />
         <div className="experience-description">
           <span className="resume-description-text">
-          As a frontend developer intern at Stryda, I’m a vital part of a team that’s building a platform for the company’s business insight team. 
-          Our development stack consists of React, TypeScript, Tailwind, and Figma. 
-          We aim to design an intuitive user interface with a strong focus on usability and data visualisation that’ll help streamline the team’s workflow and reduce their manual workload. 
+          As a frontend developer at Stryda, I was a vital part of a team that's building a platform for the company's business insight team. 
+          Our development stack consisted of React, TypeScript, Tailwind, and Figma. 
+          We aimed to design an intuitive user interface with a strong focus on usability and data visualisation that helped streamline the team's workflow and reduce their manual workload. 
+          We were committed to producing high-quality code, so I was responsible for writing efficient and scalable code, as well as conducting PR reviews on my colleagues' code. 
           </span>
           <br />
         </div>
@@ -136,13 +109,13 @@ const Resume = (props) => {
       <div className="experience-container">
         <ResumeHeading
           heading={"Nilo Collaborations"}
-          subHeading={"FRONTEND DEVELOPER INTERN"}
-          fromDate={"2022-08-02"}
-          toDate={"2022-10-20"}
+          subHeading={"FRONTEND DEVELOPER"}
+          fromDate={"2022-08-01"}
+          toDate={"2022-12-31"}
         />
         <div className="experience-description">
           <span className="resume-description-text">
-          I have had the privilege of working on the design (in Figma) and development of the frontend part with React components for Nilo, a cutting-edge digital management consultant and facilitation tool.
+          At Nilo Collab, I have been engaged in ongoing JavaScript (React) development. This work has been quite extensive, with a significant portion dedicated to designing in Figma and implementing the design by writing code in Visual Studio Code.
           </span>
           <br />
         </div>
@@ -168,28 +141,16 @@ const Resume = (props) => {
       ))}
     </div>,
 
-    <div className="resume-screen-container" key="projects">
-      {projectsDetails.map((projectsDetails, index) => (
-        <ResumeHeading
-          key={index}
-          heading={projectsDetails.title}
-          subHeading={projectsDetails.subHeading}
-          description={projectsDetails.description}
-          fromDate={projectsDetails.duration.fromDate}
-          toDate={projectsDetails.duration.toDate}
-        />
-      ))}
-    </div>,
 
 
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
-        heading="Dancing"
-        description="Dance is not just a hobby but a true passion of mine, and I find immense joy and fulfillment in expressing myself through movement. Among the diverse dance styles that I love, jazz funk, contemporary, and hip-hop hold a special place in my heart."
+        heading="Dance & Movement"
+        description="Passionate dancer specializing in jazz funk, contemporary, and hip-hop styles. Dance serves as both creative expression and physical wellness, bringing balance and inspiration to my professional life. I believe movement and creativity enhance problem-solving and innovation in development work."
       />
       <ResumeHeading
-        heading="Photography"
-        description="I have a passion for capturing moments through a lens—photography is more than a hobby for me; every now and then, I even take on gigs and step into the role of a photographer."
+        heading="Photography & Visual Arts"
+        description="I love capturing moments through my lens — photography isn't just a hobby, it's another way I tell stories. Every now and then, I step behind the camera for gigs and bring ideas to life through photos."
       />
     </div>,
   ];

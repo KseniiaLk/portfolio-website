@@ -1,18 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Footer.css";
 
 export default function Footer() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   return (
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-main">
           <div className="footer-logo-section">
             <div className="footer-logo">
-              <span className="footer-logo-text">Kseniia Lukanina</span>
             </div>
             <p className="footer-description">
-              Fullstack Developer passionate about creating meaningful digital experiences. 
-              Transforming ideas into reality through code and creativity.
+              Full-Stack Developer bringing ideas to life through creativity and code. Thanks for visiting — I'm really happy to have you here!
             </p>
           </div>
           
@@ -41,7 +60,7 @@ export default function Footer() {
             <div className="footer-section">
               <h4 className="footer-section-title">Connect</h4>
               <ul className="footer-link-list">
-                <li><a href="mailto:kseniia.lukanina@gmail.com" className="footer-link">Email</a></li>
+                <li><a href="mailto:kseniia.lukanina@outlook.com" className="footer-link">Email</a></li>
                 <li><a href="https://www.linkedin.com/in/kseniia-lukanina/" className="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                 <li><a href="https://github.com/KseniiaLk" className="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
               </ul>
@@ -62,7 +81,7 @@ export default function Footer() {
                 <path d="M9 18c-4.51 2-5-2-7-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a href="mailto:kseniia.lukanina@gmail.com" className="footer-social-link">
+            <a href="mailto:kseniia.lukanina@outlook.com" className="footer-social-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -74,14 +93,24 @@ export default function Footer() {
       
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p className="footer-copyright">
-            © 2025 Kseniia Lukanina. All rights reserved.
-          </p>
           <p className="footer-location">
             Based in Stockholm, Sweden
           </p>
         </div>
     </div>
+    
+    {/* Scroll to Top Button */}
+    {showScrollTop && (
+      <button 
+        className="scroll-to-top-btn" 
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+    )}
     </footer>
   );
 }

@@ -48,7 +48,7 @@
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--white);
-  font-family: "Poppins Bold";
+  font-family: "Poppins Regular";
   background: linear-gradient(135deg, #ff5823, #ff7a4d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -60,7 +60,7 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
-  font-family: "Poppins Light";
+  font-family: "Poppins Regular";
 }
 
 /* Footer Links */
@@ -80,7 +80,7 @@
   font-weight: 600;
   color: var(--white);
   margin: 0 0 20px 0;
-  font-family: "Poppins SemiBold";
+  font-family: "Poppins Regular";
 }
 
 .footer-link-list {
@@ -96,7 +96,7 @@
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.95rem;
-  font-family: "Poppins Light";
+  font-family: "Poppins Regular";
   transition: all 0.3s ease;
   position: relative;
 }
@@ -178,14 +178,14 @@
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
-  font-family: "Poppins Light";
+  font-family: "Poppins Regular";
 }
 
 .footer-location {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
-  font-family: "Poppins Light";
+  font-family: "Poppins Regular";
 }
 
 /* Responsive Design */
@@ -258,3 +258,54 @@
     height: 20px;
     }
   }
+
+/* Scroll to Top Button */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5823, #ff7a4d);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 88, 35, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.scroll-to-top-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 88, 35, 0.4);
+  background: linear-gradient(135deg, #ff7a4d, #ff5823);
+}
+
+.scroll-to-top-btn:active {
+  transform: translateY(-1px);
+}
+
+.scroll-to-top-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive scroll button */
+@media only screen and (max-width: 768px) {
+  .scroll-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .scroll-to-top-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
