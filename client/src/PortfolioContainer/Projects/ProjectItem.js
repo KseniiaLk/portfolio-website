@@ -1,4 +1,5 @@
 import React from "react";
+import InteractiveButton from "../../utilities/InteractiveButton/InteractiveButton";
 import './ProjectItem.css';
 
 const ProjectItem = ({ imageSrc, title, description, githubLink,liveLink }) => {
@@ -10,12 +11,22 @@ const ProjectItem = ({ imageSrc, title, description, githubLink,liveLink }) => {
           <h5 className="project-title">{title}</h5>
           <p className="project-description">{description}</p>
           <div className="project-links">
-            <a className="project-link" href={githubLink} target="_blank" rel="noopener noreferrer">
-            Project
-          </a>
-          <a className="project-link" href={liveLink} target="_blank" rel="noopener noreferrer">
-            Live Demo
-          </a>
+            {githubLink && (
+              <InteractiveButton 
+                text="Project" 
+                href={githubLink} 
+                target="_blank"
+                className="project-interactive-button"
+              />
+            )}
+            {liveLink && (
+              <InteractiveButton 
+                text="Live Demo" 
+                href={liveLink} 
+                target="_blank"
+                className="project-interactive-button"
+              />
+            )}
           </div>
         </div>
       </div>

@@ -38,19 +38,66 @@
 
 .projects-section .project-info {
   position: relative;
-  padding-left: 80px;
-  padding-top: 5px;
+  padding: 20px;
   min-height: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .projects-section .project-info img {
   height: 150px;
   width: 220px;
   border-color: black;
-  position: center;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.projects-section .project-info img:hover {
+  transform: scale(1.05);
 }
 .projects-section .project-info h5 {
   font-size: 16px;
   font-weight: 600;
   line-height: 26px;
-  margin: 0 0 2px;
+  margin: 15px 0 2px;
+  margin-left: 20px;
+  color: #333;
+}
+
+/* Mobile responsive styles for projects */
+@media only screen and (max-width: 768px) {
+  .projects-section {
+    padding: 60px 0 60px;
+  }
+  .projects-section .project-info {
+    padding: 15px;
+  }
+  .projects-section .project-info img {
+    height: 120px;
+    width: 180px;
+  }
+  .projects-section .project-info h5 {
+    font-size: 14px;
+    margin: 10px 0 2px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .projects-section {
+    padding: 40px 0 40px;
+  }
+  .projects-section .project-info {
+    padding: 10px;
+  }
+  .projects-section .project-info img {
+    height: 100px;
+    width: 150px;
+  }
+  .projects-section .project-info h5 {
+    font-size: 13px;
+    margin: 8px 0 2px;
+  }
 }

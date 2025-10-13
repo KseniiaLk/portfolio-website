@@ -33,6 +33,7 @@
   
   .resume-description-text {
     font-size: 12px;
+    margin-left: 20px;
   }
   
   .resume-details-carousal {
@@ -125,6 +126,7 @@
   .resume-heading-description {
     font-size: 12px;
     text-align: justify;
+    margin-left: 20px;
   }
   
   .heading-date {
@@ -170,6 +172,7 @@
     color: #d16e4f;
   }
   
+  /* Tablet styles */
   @media only screen and (max-width: 1110px) {
     .resume-card {
       width: 880px;
@@ -180,11 +183,13 @@
     }
   }
   
+  /* Mobile styles */
   @media only screen and (max-width: 1023px) {
     .resume-content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0 20px;
     }
   
     .bullets {
@@ -197,13 +202,14 @@
       flex-direction: column;
       margin: 30px 0;
       align-items: center;
-      width: 90%;
+      width: 100%;
+      max-width: 600px;
     }
   
     .resume-bullet-details {
       height: 360px;
       padding: 0;
-      width: fit-content;
+      width: 100%;
     }
   
     .resume-bullets {
@@ -213,5 +219,111 @@
   
     .selected-bullet {
       width: 100%;
+    }
+    
+    .resume-description-text {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    .resume-main-heading span {
+      font-size: 15px;
+    }
+    
+    .resume-sub-heading {
+      font-size: 13px;
+    }
+    
+    .resume-heading-description {
+      font-size: 11px;
+    }
+  }
+  
+  /* Small mobile styles */
+  @media only screen and (max-width: 600px) {
+    .resume-content {
+      padding: 0 15px;
+    }
+    
+    .resume-card {
+      margin: 20px 0;
+    }
+    
+    .resume-bullets {
+      margin: 20px 0;
+    }
+    
+    .bullet {
+      height: 35px;
+      margin: 10px 0;
+    }
+    
+    .bullet-label {
+      font-size: 13px;
+    }
+    
+    .resume-description-text {
+      font-size: 12px;
+    }
+    
+    .resume-main-heading span {
+      font-size: 14px;
+    }
+    
+    .resume-sub-heading {
+      font-size: 12px;
+    }
+    
+    .resume-heading-description {
+      font-size: 10px;
+    }
+    
+    .heading-date {
+      font-size: 12px;
+      padding: 3px 10px;
+    }
+    
+    .skill-parent {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    
+    .skill-percentage {
+      width: 100%;
+    }
+    
+    .skill-parent span {
+      font-size: 14px;
+    }
+  }
+  
+  /* Extra small mobile styles */
+  @media only screen and (max-width: 480px) {
+    .resume-container {
+      margin: 80px 0;
+    }
+    
+    .resume-content {
+      padding: 0 10px;
+    }
+    
+    .bullet-label {
+      font-size: 12px;
+    }
+    
+    .resume-description-text {
+      font-size: 11px;
+    }
+    
+    .resume-main-heading span {
+      font-size: 13px;
+    }
+    
+    .resume-sub-heading {
+      font-size: 11px;
+    }
+    
+    .resume-heading-description {
+      font-size: 9px;
     }
   }

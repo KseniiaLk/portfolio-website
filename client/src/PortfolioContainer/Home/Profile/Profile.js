@@ -1,4 +1,5 @@
 import React from "react";
+import InteractiveButton from "../../../utilities/InteractiveButton/InteractiveButton";
 import "./Profile.css";
 
 
@@ -15,9 +16,6 @@ export default function Profile() {
               <a href="https://github.com/KseniiaLk">
                 <i className=" fa fa-github-square"></i>
               </a>
-              <a href="https://instagram.com/kseny_lk?igshid=MTIyMzRjYmRlZg==">
-                <i className=" fa fa-instagram"></i>
-              </a>
             </div>
           </div>
           <div className="profile-details-name">
@@ -29,16 +27,18 @@ export default function Profile() {
           <div className="profile-details-role">
             <span className="primary-text">
               <h3 className="profile-role-tagline">
-                I am a curious and enthusiastic junior Fullstack developer from
-                Stockholm.
+                I’m a curious, creative, and enthusiastic Fullstack Developer from Stockholm who loves learning and building meaningful digital experience.
               </h3>
             </span>
           </div>
 
           <div className="profile-options">
-            <a href="KseniiaLk.pdf" download="KseniiaLk.pdf">
-              <button className="btn highlighted-btn">Get CV</button>
-            </a>
+            <InteractiveButton 
+              text="Get CV" 
+              href="KseniiaLk.pdf" 
+              target="_blank"
+              className="profile-cv-button"
+            />
           </div>
         </div>
         <div className="profile-picture">

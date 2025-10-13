@@ -9,9 +9,12 @@ const Resume = (props) => {
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
 
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeInScreen !== props.id) return;
-
-    Animations.animations.fadeInScreen(props.id);
+    try {
+      if (!screen || !props?.id || !screen.fadeInScreen || screen.fadeInScreen !== props.id) return;
+      Animations.animations.fadeInScreen(props.id);
+    } catch (error) {
+      console.error('Error in Resume fadeInScreenHandler:', error);
+    }
   };
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
@@ -77,6 +80,14 @@ const Resume = (props) => {
         "At Nilo Collab, I have been engaged in ongoing JavaScript (React) development. This work has been quite extensive, with a significant portion dedicated to designing in Figma and implementing the design by writing code in Visual Studio Code. Additionally, my tasks have involved making code changes to various components, applying style modifications, and implementing new features.",
       subHeading:
         "Technologies Used: Figma, React JS.",
+    },
+    {
+      title: "RestAPICV ",
+      duration: { fromDate: "2023", toDate: "2023" },
+      description:
+        "Built a comprehensive backend REST API using ASP.NET Core to manage CV data. The system features SQL Server database integration through Entity Framework, implementing full CRUD operations for retrieving, adding, updating, and removing information. This project demonstrates my backend development skills and database management expertise.",
+      subHeading:
+        "Technologies Used: ASP.NET Core, C#, SQL Server, Entity Framework, REST API.",
     },
 
   ];

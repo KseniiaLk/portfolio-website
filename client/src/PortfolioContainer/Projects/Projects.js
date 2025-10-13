@@ -8,21 +8,30 @@ import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./Projects.css";
-import Dashboard from "../img/Projects/Dashboard.png";
 import EWallet from "../img/Projects/EWallet.png";
-import IngeBra from "../img/Projects/IngeBra.png";
 import WealthSpecialists from "../img/Projects/WealthSpecialists.png";
 import BattlePass from "../img/Projects/BattlePass.png";
 import Nilo from "../img/Projects/Nilo.png";
 import shape from "../img/Projects/shape-bg.png";
+import RestAPICV from "../img/Projects/RestAPICV.png";
 
 export default function Projects(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeInScreen !== props.id) return;
-    Animations.animations.fadeInScreen(props.id);
+    try {
+      if (!screen || !props?.id || !screen.fadeInScreen || screen.fadeInScreen !== props.id) return;
+      Animations.animations.fadeInScreen(props.id);
+    } catch (error) {
+      console.error('Error in Projects fadeInScreenHandler:', error);
+    }
   };
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
+  React.useEffect(() => {
+    return () => {
+      fadeInSubscription.unsubscribe();
+    };
+  }, [fadeInSubscription]);
 
   const options = {
     loop: true,
@@ -74,21 +83,15 @@ export default function Projects(props) {
                   </div>
               <div className="col-lg-12">
                   <div className="project-info">
+                    <img src={RestAPICV} alt=""></img>
+                    <h5>RestAPICV</h5>
+                  </div>
+                </div>
+              <div className="col-lg-12">
+                  <div className="project-info">
                     <img src={EWallet} alt=""></img>
                     <h5>E-wallet</h5>
                 </div>
-                </div>
-              <div className="col-lg-12">
-                  <div className="project-info">
-                    <img src={IngeBra} alt=""></img>
-                    <h5>Inge Bra Bygg</h5>
-                  </div>
-                </div>
-              <div className="col-lg-12">
-                  <div className="project-info">
-                    <img src={Dashboard} alt=""></img>
-                    <h5>Dashboard</h5>
-                  </div>
                 </div>
               <div className="col-lg-12">
                   <div className="project-info">
@@ -117,17 +120,10 @@ export default function Projects(props) {
               liveLink="https://www.nilocollab.com/"
             />
             <ProjectItem
-              imageSrc={IngeBra}
-              title="Inge Bra Bygg"
-              description="Backend REST API for a case management system for a building company written in Node.js, Express."
-              githubLink="https://github.com/KseniiaLk/Inge_Bra_Bygg"
-            />
-            <ProjectItem
-              imageSrc={Dashboard}
-              title="Dashboard"
-              description="ITHS Dashboard is a Progressive Web App (PWA) built in React, TypeScript."
-              githubLink="https://github.com/KseniiaLk/cpu-dashbord"
-              liveLink="https://iths-db.netlify.app/"
+              imageSrc={RestAPICV}
+              title="RestAPICV"
+              description="Backend REST API built with ASP.NET Core to manage CV data. Features SQL Server database integration through Entity Framework with full CRUD operations for retrieving, adding, updating, and removing information."
+              githubLink="https://github.com/KseniiaLk/RestAPICV"
             />
               <ProjectItem
               imageSrc={EWallet}
@@ -139,7 +135,7 @@ export default function Projects(props) {
             <ProjectItem
               imageSrc={WealthSpecialists}
               title="WealthSpecialists"
-              description="We developed a C# backend banking system with user authentication, account and transaction management (including currency exchange, savings, and loans), admin-controlled user creation, security features like login lockout, and a user-friendly interface with delayed transaction processing for better control."
+              description="Developed a C# backend banking system featuring user authentication, account and transaction management (including currency exchange, savings, and loans), admin-controlled user creation, security measures such as login lockout, and a user-friendly interface with delayed transaction processing for improved control."
               githubLink="https://github.com/KseniiaLk/WealthSpecialists"
              />
       </div>

@@ -1,20 +1,33 @@
 /* eslint-disable no-unused-vars */
+import React from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
+import WavesBackground from "../../utilities/WavesBackground/WavesBackground";
+import InteractiveButton from "../../utilities/InteractiveButton/InteractiveButton";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeInScreen !== props.id) return;
-    Animations.animations.fadeInScreen(props.id);
+    try {
+      if (!screen || !props?.id || !screen.fadeInScreen || screen.fadeInScreen !== props.id) return;
+      Animations.animations.fadeInScreen(props.id);
+    } catch (error) {
+      console.error('Error in AboutMe fadeInScreenHandler:', error);
+    }
   };
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
+  React.useEffect(() => {
+    return () => {
+      fadeInSubscription.unsubscribe();
+    };
+  }, [fadeInSubscription]);
+
   const SCREEN_CONSTSANTS = {
     description:
-      "As a junior Fullstack developer with several years of dedicated study and valuable internship experience at Nilo Collab and Stryda, I am excited to share my passion for learning, technology, and project participation. I am constantly seeking opportunities to enhance my skills and contribute to innovative projects.",
+      "I'm a Fullstack Developer with a strong interest in technology, problem-solving, and creating meaningful digital products. I work with both frontend and backend development using .NET, Node.js, and SQL, and I also have experience in technical support and troubleshooting. I enjoy building user-friendly applications, improving system performance, and finding practical solutions to complex issues.",
     highlights: {
       bullets: [
         "C# .NET",
@@ -44,6 +57,19 @@ export default function AboutMe(props) {
       className="about-me-container screen-container fade-in"
       id={props.id || ""}
     >
+      <WavesBackground
+        lineColor="rgba(255, 88, 35, 0.2)"
+        backgroundColor="transparent"
+        waveSpeedX={0.02}
+        waveSpeedY={0.01}
+        waveAmpX={40}
+        waveAmpY={20}
+        friction={0.9}
+        tension={0.01}
+        maxCursorMove={120}
+        xGap={12}
+        yGap={36}
+      />
       <div className="about-me-parent">
         <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
         <div className="about-me-card">
@@ -59,9 +85,12 @@ export default function AboutMe(props) {
               {renderHighlight()}
             </div>
             <div className="about-me-options">
-            <a href="KseniiaLk.pdf" download="KseniiaLk.pdf">
-              <button className="btn highlighted-btn">Get CV</button>
-            </a>
+              <InteractiveButton 
+                text="Get CV" 
+                href="KseniiaLk.pdf" 
+                target="_blank"
+                className="about-me-cv-button"
+              />
             </div>
           </div>
         </div>

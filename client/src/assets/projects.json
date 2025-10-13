@@ -8,20 +8,12 @@
       "tools": ["JavaScript", "Vue.JS"]
     },
     {
-      "title": "Inge Bra Bygg",
+      "title": "RestAPICV",
       "id": "2",
-      "image":"img/IngeBra.png",
-      "github": "https://github.com/KseniiaLk/Inge_Bra_Bygg",
-      "description": "Backend REST API for a case management system for a building company written in Node.js, Express.",
-      "tools": ["JavaScript", "Node.js", "Express", "Sequelize"]
-    },
-    {
-      "title": "Dashboard",
-      "id": "3",
-      "image": "img/Dashboard.png",
-      "github": "https://github.com/KseniiaLk/cpu-dashbord",
-      "description": "ITHS Dashboard is a Progressive Web App (PWA) built in React, TypeScript.",
-      "tools": ["JavaScript", "TypeScript", "React"]
+      "image":"img/RestAPICV.png",
+      "github": "https://github.com/KseniiaLk/RestAPICV",
+      "description": "Backend REST API built with ASP.NET Core to manage CV data. Features SQL Server database integration through Entity Framework with full CRUD operations.",
+      "tools": ["C#", "ASP.NET Core", "SQL Server", "Entity Framework", "REST API"]
     },
     {
       "title": "Star Wars",

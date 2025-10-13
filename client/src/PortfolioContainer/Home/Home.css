@@ -4,5 +4,23 @@
     justify-content: space-between;
     min-height: 670px;
     background-image: url("../../assets/Home/1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
+/* Mobile responsive styles for home container */
+@media only screen and (max-width: 768px) {
+    .home-container {
+        min-height: 100vh;
+        background-attachment: scroll;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .home-container {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
 }

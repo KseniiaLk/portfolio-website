@@ -59,6 +59,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global responsive improvements */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -108,13 +127,61 @@ body ::-webkit-scrollbar-thumb {
 
 .highlighted-btn {
   color: var(--white);
-
-  font-size: 12px;
-  background-color: red;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ff5823, #ff7a4d);
+  border: 2px solid #ff5823;
+  border-radius: 25px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 88, 35, 0.3);
+  cursor: pointer;
 }
+
+.highlighted-btn:hover {
+  background: linear-gradient(135deg, #ff7a4d, #ff5823);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 88, 35, 0.4);
+  border-color: #ff7a4d;
+}
+/* Mobile-first responsive design improvements */
 @media only screen and (max-width: 568px) {
   .highlighted-btn {
-    z-index: -900;
+    z-index: 700;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+}
+
+/* Tablet styles */
+@media only screen and (max-width: 768px) {
+  .btn {
+    width: 140px;
+    padding: 12px 0;
+  }
+  
+  .highlighted-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Small mobile styles */
+@media only screen and (max-width: 480px) {
+  .btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 13px;
   }
 }
 

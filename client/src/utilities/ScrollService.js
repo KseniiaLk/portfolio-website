@@ -38,6 +38,8 @@ export default class ScrollService {
     if (!event || Object.keys(event).length < 1) return;
 
     for (let screen of TOTAL_SCREENS) {
+      if (!screen || !screen.screen_name) continue;
+      
       let screenFromDOM = document.getElementById(screen.screen_name);
       if (!screenFromDOM) continue;
 
