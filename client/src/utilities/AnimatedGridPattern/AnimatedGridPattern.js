@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import "./AnimatedGridPattern.css";
 
 const AnimatedGridPattern = ({
@@ -16,22 +16,21 @@ const AnimatedGridPattern = ({
 }) => {
   const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [squares, setSquares] = useState(() => generateSquares(numSquares));
 
-  function getPos() {
-    return [
+  // Generate squares with random positions
+  const generateSquares = useCallback((count) => {
+    const getPos = () => [
       Math.floor((Math.random() * dimensions.width) / width),
       Math.floor((Math.random() * dimensions.height) / height),
     ];
-  }
-
-  // Generate squares with random positions
-  function generateSquares(count) {
+    
     return Array.from({ length: count }, (_, i) => ({
       id: i,
       pos: getPos(),
     }));
-  }
+  }, [dimensions.width, dimensions.height, width, height]);
+
+  const [squares, setSquares] = useState(() => generateSquares(numSquares));
 
   // Update a single square's position
   const updateSquarePosition = (id) => {
@@ -40,7 +39,10 @@ const AnimatedGridPattern = ({
         sq.id === id
           ? {
               ...sq,
-              pos: getPos(),
+              pos: [
+                Math.floor((Math.random() * dimensions.width) / width),
+                Math.floor((Math.random() * dimensions.height) / height),
+              ],
             }
           : sq,
       ),
@@ -52,7 +54,7 @@ const AnimatedGridPattern = ({
     if (dimensions.width && dimensions.height) {
       setSquares(generateSquares(numSquares));
     }
-  }, [dimensions, numSquares]);
+  }, [dimensions, numSquares, generateSquares]);
 
   // Resize observer to update container dimensions
   useEffect(() => {
@@ -65,16 +67,17 @@ const AnimatedGridPattern = ({
       }
     });
 
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    const currentContainer = containerRef.current;
+    if (currentContainer) {
+      resizeObserver.observe(currentContainer);
     }
 
     return () => {
-      if (containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
+      if (currentContainer) {
+        resizeObserver.unobserve(currentContainer);
       }
     };
-  }, [containerRef]);
+  }, []);
 
   // Generate unique pattern ID
   const patternId = `grid-pattern-${Math.random().toString(36).substr(2, 9)}`;

@@ -36,16 +36,6 @@ export default function Footer() {
           </div>
           
           <div className="footer-links">
-            <div className="footer-section">
-              <h4 className="footer-section-title">Navigation</h4>
-              <ul className="footer-link-list">
-                <li><a href="#Home" className="footer-link">Home</a></li>
-                <li><a href="#AboutMe" className="footer-link">About</a></li>
-                <li><a href="#Resume" className="footer-link">Resume</a></li>
-                <li><a href="#Projects" className="footer-link">Projects</a></li>
-                <li><a href="#Contact" className="footer-link">Contact</a></li>
-              </ul>
-            </div>
             
             <div className="footer-section">
               <h4 className="footer-section-title">Projects</h4>

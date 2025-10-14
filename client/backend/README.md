@@ -68,3 +68,5 @@ For Gmail, you'll need to:
 1. Enable 2-factor authentication
 2. Generate an app password
 3. Use the app password in `EMAIL_PASS`
+
+
