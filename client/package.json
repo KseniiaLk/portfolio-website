@@ -3,6 +3,7 @@
   "proxy": "http://localhost:5000",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
@@ -46,7 +47,9 @@
     "dev": "concurrently \"npm start\" \"cd backend && npm run dev\"",
     "install-backend": "cd backend && npm install",
     "heroku-postbuild": "npm run build",
-    "serve": "serve -s build -l 3000"
+    "serve": "serve -s build -l 3000",
+    "railway:build": "npm run build",
+    "railway:start": "npm run serve"
   },
   "eslintConfig": {
     "extends": [
