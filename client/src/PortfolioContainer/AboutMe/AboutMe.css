@@ -155,3 +155,49 @@
       font-size: 12px;
     }
   }
+
+  /* Enhanced responsive improvements */
+  @media only screen and (max-width: 1024px) {
+    .about-me-parent {
+      width: 85%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .about-me-card {
+      flex-direction: column;
+    }
+    .about-me-profile {
+      width: 100%;
+      height: 300px;
+      order: 1;
+    }
+    .about-me-details {
+      width: 100%;
+      order: 2;
+      padding: 20px;
+    }
+    .about-me-description {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .about-me-parent {
+      width: 95%;
+    }
+    .about-me-profile {
+      height: 250px;
+    }
+    .about-me-details {
+      padding: 15px;
+    }
+    .about-me-description {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .about-me-highlights {
+      margin: 30px 0;
+    }
+  }

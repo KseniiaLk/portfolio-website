@@ -101,3 +101,46 @@
     margin: 8px 0 2px;
   }
 }
+
+/* Enhanced responsive improvements */
+@media only screen and (max-width: 1024px) {
+  .projects-section .project-info img {
+    height: 130px;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .projects-section .project-info img {
+    height: 120px;
+    width: 180px;
+  }
+  .projects-section .project-info h5 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .projects-section .project-info {
+    padding: 12px;
+  }
+  .projects-section .project-info img {
+    height: 100px;
+    width: 160px;
+  }
+  .projects-section .project-info h5 {
+    font-size: 14px;
+    margin: 8px 0 2px;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .projects-section {
+    padding: 40px 0;
+  }
+  .projects-section .project-info img {
+    height: 80px;
+    width: 120px;
+  }
+}

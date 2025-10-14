@@ -70,11 +70,64 @@ img {
   height: auto;
 }
 
+/* Responsive container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive grid system */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  flex: 1;
+  padding: 0 15px;
+}
+
+/* Responsive text */
+h1, h2, h3, h4, h5, h6 {
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
 /* Improve touch targets on mobile */
 @media (max-width: 768px) {
   button, a, input, select, textarea {
     min-height: 44px;
     min-width: 44px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .row {
+    margin: 0 -10px;
+  }
+  
+  .col {
+    padding: 0 10px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .row {
+    margin: 0 -5px;
+  }
+  
+  .col {
+    padding: 0 5px;
   }
 }
 
