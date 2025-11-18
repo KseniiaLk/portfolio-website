@@ -1,24 +1,25 @@
 import React from "react";
-import { TOTAL_SCREENS } from "../utilities/commonUtils";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Header from "./Home/Header/Header";
 import Footer from "./footer/Footer";
+import Home from "./Home/Home";
+import AboutMe from "./AboutMe/AboutMe";
+import Resume from "./Resume/Resume";
+import Projects from "./Projects/Projects";
+import Contact from "./Contact/Contact";
 
 export default function PortfolioContainer() {
-  const mapAllScreens = () => {
-    return TOTAL_SCREENS.map((screen) =>
-      screen.component ? (
-        <screen.component
-          screenName={screen.screen_name}
-          key={screen.screen_name}
-          id={screen.screen_name}
-        />
-      ) : (
-        <div key={screen.screen_name}></div>
-      )
-    );
-  };
   return (
     <div className="portfolio-container">
-      {mapAllScreens()}
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home id="Home" />} />
+        <Route path="/about" element={<AboutMe id="AboutMe" />} />
+        <Route path="/resume" element={<Resume id="Resume" />} />
+        <Route path="/projects" element={<Projects id="Projects" />} />
+        <Route path="/contact" element={<Contact id="Contact" />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
       <Footer />
     </div>
   );

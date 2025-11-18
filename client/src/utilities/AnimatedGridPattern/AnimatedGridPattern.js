@@ -17,7 +17,7 @@ const AnimatedGridPattern = ({
   const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  // Generate squares with random positions
+ 
   const generateSquares = useCallback((count) => {
     const getPos = () => [
       Math.floor((Math.random() * dimensions.width) / width),
@@ -32,7 +32,6 @@ const AnimatedGridPattern = ({
 
   const [squares, setSquares] = useState(() => generateSquares(numSquares));
 
-  // Update a single square's position
   const updateSquarePosition = (id) => {
     setSquares((currentSquares) =>
       currentSquares.map((sq) =>
@@ -49,14 +48,11 @@ const AnimatedGridPattern = ({
     );
   };
 
-  // Update squares when dimensions change
   useEffect(() => {
     if (dimensions.width && dimensions.height) {
       setSquares(generateSquares(numSquares));
     }
   }, [dimensions, numSquares, generateSquares]);
-
-  // Resize observer to update container dimensions
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
       for (let entry of entries) {
@@ -79,7 +75,6 @@ const AnimatedGridPattern = ({
     };
   }, []);
 
-  // Generate unique pattern ID
   const patternId = `grid-pattern-${Math.random().toString(36).substr(2, 9)}`;
 
   return (

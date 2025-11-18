@@ -30,7 +30,6 @@ export default function Contact(props) {
       id={props.id || ""}
     >
       <ScreenHeading title={"Contact"} subHeading={"Get in touch with me"} />
-      
       <main className="contact-main">
         <div className="contact-wrapper">
           <div className="contact-header">

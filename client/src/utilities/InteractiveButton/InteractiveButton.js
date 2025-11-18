@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./InteractiveButton.css";
 
 const InteractiveButton = React.forwardRef(({ 
@@ -6,6 +7,7 @@ const InteractiveButton = React.forwardRef(({
   className = "", 
   onClick,
   href,
+  to,
   target,
   ...props 
 }, ref) => {
@@ -22,6 +24,20 @@ const InteractiveButton = React.forwardRef(({
       </span>
     </button>
   );
+  if (to) {
+    return (
+      <Link 
+        to={to}
+        className={`interactive-button-link ${className}`}
+        {...props}
+      >
+        <div className="interactive-button-glow" />
+        <span className="interactive-button-text">
+          {text}
+        </span>
+      </Link>
+    );
+  }
 
   if (href) {
     return (

@@ -59,18 +59,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Global responsive improvements */
 * {
   box-sizing: border-box;
 }
 
-/* Ensure images are responsive */
+
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Responsive container */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -78,7 +76,6 @@ img {
   padding: 0 20px;
 }
 
-/* Responsive grid system */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -90,13 +87,11 @@ img {
   padding: 0 15px;
 }
 
-/* Responsive text */
 h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
   line-height: 1.2;
 }
 
-/* Improve touch targets on mobile */
 @media (max-width: 768px) {
   button, a, input, select, textarea {
     min-height: 44px;
@@ -116,7 +111,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Extra small devices */
 @media (max-width: 480px) {
   .container {
     padding: 0 10px;
@@ -199,7 +193,6 @@ body ::-webkit-scrollbar-thumb {
   box-shadow: 0 6px 20px rgba(255, 88, 35, 0.4);
   border-color: #ff7a4d;
 }
-/* Mobile-first responsive design improvements */
 @media only screen and (max-width: 568px) {
   .highlighted-btn {
     z-index: 700;
@@ -216,7 +209,6 @@ body ::-webkit-scrollbar-thumb {
   }
 }
 
-/* Tablet styles */
 @media only screen and (max-width: 768px) {
   .btn {
     width: 140px;
@@ -229,7 +221,6 @@ body ::-webkit-scrollbar-thumb {
   }
 }
 
-/* Small mobile styles */
 @media only screen and (max-width: 480px) {
   .btn {
     width: 100%;

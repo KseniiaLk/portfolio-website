@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
+import resumeData from "../../data/resumeData.json";
 import "./Resume.css";
 
 const Resume = (props) => {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
+  const [resumeDetails, setResumeDetails] = useState([]);
 
   let fadeInScreenHandler = (screen) => {
     try {
@@ -48,112 +50,80 @@ const Resume = (props) => {
     { label: "Programming Skills" },
     { label: "Interests" },
   ];
-  const programmingSkillsDetails = [
-    { skill: "JavaScript", ratingPercentage: 90 },
-    { skill: "React", ratingPercentage: 85 },
-    { skill: "TypeScript", ratingPercentage: 80 },
-    { skill: "Vue.js", ratingPercentage: 80 },
-    { skill: "C#", ratingPercentage: 80 },
-    { skill: "Node.js", ratingPercentage: 75 },
-    { skill: "Express.js", ratingPercentage: 70 },
-    { skill: "Tailwind CSS", ratingPercentage: 85 },
-    { skill: "Bootstrap", ratingPercentage: 80 },
-    { skill: "SASS/SCSS", ratingPercentage: 70 },
-    { skill: "MongoDB", ratingPercentage: 60 },
-    { skill: "SQLite", ratingPercentage: 80 },
-  ];
 
+  useEffect(() => {
+    const generateResumeDetails = () => {
+      const details = [
+        // Education section
+        <div className="resume-screen-container" key="education">
+          {resumeData.education.map((edu, index) => (
+            <ResumeHeading
+              key={index}
+              heading={edu.heading}
+              subHeading={edu.subHeading}
+              fromDate={edu.fromDate}
+              toDate={edu.toDate}
+            />
+          ))}
+        </div>,
 
-  const resumeDetails = [
-    <div className="resume-screen-container" key="education">
-      <ResumeHeading
-        heading={"ChasAcademy"}
-        subHeading={".Net Developer"}
-        fromDate={"2024"}
-        toDate={"2026"}
-      />
-       <ResumeHeading
-        heading={"IT-Högskolan"}
-        subHeading={"JavaScript Developer"}
-        fromDate={"2021"}
-        toDate={"2023"}
-      />
+        // Work section
+        <div className="resume-screen-container" key="work">
+          {resumeData.work.map((job, index) => (
+            <div className="experience-container" key={index}>
+              <ResumeHeading
+                heading={job.heading}
+                subHeading={job.subHeading}
+                fromDate={job.fromDate}
+                toDate={job.toDate}
+              />
+              {job.description && (
+                <div className="experience-description">
+                  <span className="resume-description-text">
+                    {job.description}
+                  </span>
+                  <br />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>,
 
-      <ResumeHeading
-        heading={"St. Petersburg State University of Telecommunications"}
-        subHeading={"Bachelor's Degree in International Relations and Affairs"}
-        fromDate={"2013"}
-        toDate={"2017"}
-      />
-    </div>,
+        // Programming Skills section
+        <div
+          className="resume-screen-container programming-skills-container"
+          key="programming"
+        >
+          {resumeData.programmingSkills.map((skill, index) => (
+            <div className="skill-parent" key={index}>
+              <div className="heading-bullet"></div>
+              <span>{skill.skill}</span>
+              <div className="skill-percentage">
+                <div
+                  style={{ width: skill.ratingPercentage + "%" }}
+                  className="active-percentage-bar"
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>,
 
-    <div className="resume-screen-container" key="work">
-      <div className="experience-container">
-        <ResumeHeading
-          heading={"Stryda"}
-          subHeading={"FRONTEND DEVELOPER"}
-          fromDate={"2023-01-01"}
-          toDate={"2023-07-31"}
-        />
-        <div className="experience-description">
-          <span className="resume-description-text">
-          As a frontend developer at Stryda, I was a vital part of a team that's building a platform for the company's business insight team. 
-          Our development stack consisted of React, TypeScript, Tailwind, and Figma. 
-          We aimed to design an intuitive user interface with a strong focus on usability and data visualisation that helped streamline the team's workflow and reduce their manual workload. 
-          We were committed to producing high-quality code, so I was responsible for writing efficient and scalable code, as well as conducting PR reviews on my colleagues' code. 
-          </span>
-          <br />
-        </div>
-      </div>
-      <div className="resume-screen-container" key="work">
-      <div className="experience-container">
-        <ResumeHeading
-          heading={"Nilo Collaborations"}
-          subHeading={"FRONTEND DEVELOPER"}
-          fromDate={"2022-08-01"}
-          toDate={"2022-12-31"}
-        />
-        <div className="experience-description">
-          <span className="resume-description-text">
-          At Nilo Collab, I have been engaged in ongoing JavaScript (React) development. This work has been quite extensive, with a significant portion dedicated to designing in Figma and implementing the design by writing code in Visual Studio Code.
-          </span>
-          <br />
-        </div>
-      </div>
-      </div>
-    </div>,
+        // Interests section
+        <div className="resume-screen-container" key="interests">
+          {resumeData.interests.map((interest, index) => (
+            <ResumeHeading
+              key={index}
+              heading={interest.heading}
+              description={interest.description}
+            />
+          ))}
+        </div>,
+      ];
+      setResumeDetails(details);
+    };
 
-    <div
-      className="resume-screen-container programming-skills-container"
-      key="programming"
-    >
-      {programmingSkillsDetails.map((skill, index) => (
-        <div className="skill-parent" key={index}>
-          <div className="heading-bullet"></div>
-          <span>{skill.skill}</span>
-          <div className="skill-percentage">
-            <div
-              style={{ width: skill.ratingPercentage + "%" }}
-              className="active-percentage-bar"
-            ></div>
-          </div>
-        </div>
-      ))}
-    </div>,
-
-
-
-    <div className="resume-screen-container" key="interests">
-      <ResumeHeading
-        heading="Dance & Movement"
-        description="Passionate dancer specializing in jazz funk, contemporary, and hip-hop styles. Dance serves as both creative expression and physical wellness, bringing balance and inspiration to my professional life. I believe movement and creativity enhance problem-solving and innovation in development work."
-      />
-      <ResumeHeading
-        heading="Photography & Visual Arts"
-        description="I love capturing moments through my lens — photography isn't just a hobby, it's another way I tell stories. Every now and then, I step behind the camera for gigs and bring ideas to life through photos."
-      />
-    </div>,
-  ];
+    generateResumeDetails();
+  }, []);
 
   const handleCarousal = (index) => {
     let offsetHeight = 360;

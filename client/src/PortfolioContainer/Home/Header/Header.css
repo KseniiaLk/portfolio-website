@@ -2,7 +2,11 @@
   display: flex;
   justify-content: center;
   height: 149px;
-  color: var(--white);
+  color: #ffffff;
+  background: linear-gradient(135deg, #6b7280 0%, #3b82f6 25%, #cc5500 50%, #3b82f6 75%, #6b7280 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 .header-parent {
   display: flex;
@@ -10,7 +14,9 @@
   justify-content: space-around;
   height: 100%;
   width: 70%;
-  color: var(--white);
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 .header-options {
   display: flex;
@@ -20,17 +26,52 @@
   font-size: 16px;
   cursor: pointer;
   font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.header-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(107, 114, 128, 0.3), rgba(59, 130, 246, 0.3), rgba(204, 85, 0, 0.3));
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header-option:hover::before {
+  opacity: 1;
+}
+
+.header-option:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .header-hamburger {
   display: none;
-  color: var(--white);
+  color: #ffffff;
 }
 .header-option-seperator {
   margin: 0 50px 0 0;
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.6);
 }
 .selected-header-option {
-  color: var(--dark-orange);
+  color: #ffffff;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(107, 114, 128, 0.4), rgba(59, 130, 246, 0.4), rgba(204, 85, 0, 0.4));
+  padding: 8px 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 /* Tablet styles */
 @media only screen and (max-width: 1110px) {
@@ -60,33 +101,37 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #1f2235;
+    background: linear-gradient(135deg, #6b7280 0%, #3b82f6 25%, #cc5500 50%, #3b82f6 75%, #6b7280 100%);
     z-index: 1000;
-    opacity: 0.95;
+    opacity: 0.98;
   }
   .header-option {
     font-size: 18px;
     padding: 15px 0;
     text-align: center;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
   }
   .header-option-seperator {
     margin: 0;
   }
   .selected-header-option {
-    color: var(--dark-orange);
-    background-color: rgba(255, 88, 35, 0.1);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.25);
+    font-weight: 700;
   }
   .header-hamburger-bars {
     font-size: 28px;
     cursor: pointer;
     margin: 0px 10px;
-    color: var(--white);
-    transition: transform 0.3s ease;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
   }
   .header-hamburger-bars:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(90deg);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
   .show-hamburger-options {
     left: 0;

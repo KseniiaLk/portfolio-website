@@ -2,12 +2,14 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "description": "Portfolio website with React frontend and Node.js backend",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "dev": "cd client && npm run dev",
+    "start:client": "cd client && npm start",
+    "start:backend": "cd backend && npm run dev",
     "build": "cd client && npm run build",
-    "serve": "cd client && npm run serve",
-    "install-deps": "cd client && npm install --legacy-peer-deps"
+    "install-deps": "cd client && npm install --legacy-peer-deps",
+    "install-backend": "cd backend && npm install",
+    "install-all": "npm run install-backend && npm run install-deps"
   },
   "engines": {
     "node": "18.x"

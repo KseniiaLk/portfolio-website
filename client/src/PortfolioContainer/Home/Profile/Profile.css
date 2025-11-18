@@ -10,17 +10,24 @@
   align-items: center;
   color: aliceblue;
 }
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 .profile-details-name {
   font-size: 24;
   font-family: "Poppins SemiBold";
   margin: 0 0 20px 0;
-  margin-left: 60px;
+  text-align: center;
 }
 .profile-details-role {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 14px 0 24px 0;
-  margin-left: 20px;
+  text-align: center;
 }
 .profile-details-role h2 {
   font-size: 40px;
@@ -35,11 +42,18 @@
 .profile-role-tagline {
   font-size: 19px;
   margin: 5px 0 0 0;
-  margin-left: 20px;
   font-family: "Poppins Light";
+  text-align: center;
+  max-width: 600px;
+}
+.profile-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .profile-options .highlighted-btn {
-  margin: 0 0 0 28px;
+  margin: 0;
   background-color: azure;
   color: black;
 }
@@ -48,7 +62,7 @@
 .profile-cv-button {
   background: linear-gradient(135deg, #ff5823, #ff7a4d);
   border: 2px solid #ff5823;
-  margin: 0 0 0 28px;
+  margin: 0;
   color: white;
 }
 
@@ -68,7 +82,7 @@
   box-shadow: 0 1px 0px 0px var(--white);
   border-radius: 40%;
   height: 380px;
-  width: 450px;
+  width: 350px;
   margin: 0 0px 0 100px;
 }
 .profile-picture-background {
@@ -84,23 +98,28 @@
   transform: scale(1.07);
   transition: 1s ease-out;
 }
+.colz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+.colz .colz-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+}
 .colz .colz-icon i {
   color: whitesmoke;
   padding: 12px;
-  padding-left: 0px;
-  margin-left: 20px;
-  font-size: 24px;
+  font-size: 36px;
+  transition: transform 0.3s ease;
 }
 .colz .colz-icon i:hover {
   transform: scale(1.5);
-}
-
-.colz .colz-icon {
-  margin-left: 20px;
-}
-
-.colz {
-  margin-left: 20px;
 }
 /* Tablet styles */
 @media screen and (max-width: 1110px) {
@@ -124,7 +143,7 @@
 @media screen and (max-width: 910px){
   .profile-picture{
     height: 320px;
-    width: 380px;
+    width: 300px;
     margin: 0 0 0 20px;
   }
   .profile-details-name{
@@ -196,7 +215,7 @@
   }
   .colz .colz-icon i {
     padding: 12px;
-    font-size: 22px;
+    font-size: 32px;
   }
 }
 

@@ -3,10 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 670px;
-    background-image: url("../../assets/Home/1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #6b7280 0%, #3b82f6 25%, #cc5500 50%, #3b82f6 75%, #6b7280 100%);
 }
 
 /* Mobile responsive styles for home container */
@@ -20,7 +17,5 @@
 @media only screen and (max-width: 480px) {
     .home-container {
         min-height: 100vh;
-        background-size: cover;
-        background-position: center;
     }
 }
